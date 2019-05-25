@@ -1,21 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.4</TargetFramework>
+    <TargetFramework>netstandard1.1</TargetFramework>
     <RootNamespace>MagyarNemzetiBank</RootNamespace>
     <AssemblyName>MagyarNemzetiBank.BankAccount</AssemblyName>
     <Description>This library written in pure C# checks the validity of Hungarian bank account numbers and determines which bank they belong to</Description>
     <Company>Balázs Keresztury</Company>
     <Copyright>Copyright (c) 2019 Balázs Keresztury</Copyright>
     <Product>MagyarNemzetiBank.BankAccount</Product>
+    <AssemblyVersion>1.0.0</AssemblyVersion>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="Properties\" />
-  </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Command="&quot;C:\Program Files (x86)\NuGet\nuget.exe&quot; pack &quot;$(ProjectPath)&quot; -Prop Configuration=$(ConfigurationName)" />
   </Target>
-
 </Project>
