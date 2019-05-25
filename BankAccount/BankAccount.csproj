@@ -6,12 +6,16 @@
     <AssemblyName>MagyarNemzetiBank.BankAccount</AssemblyName>
     <Description>This library written in pure C# checks the validity of Hungarian bank account numbers and determines which bank they belong to</Description>
     <Company>Balázs Keresztury</Company>
-    <Copyright>2019</Copyright>
+    <Copyright>Copyright (c) 2019 Balázs Keresztury</Copyright>
     <Product>MagyarNemzetiBank.BankAccount</Product>
   </PropertyGroup>
 
   <ItemGroup>
     <Folder Include="Properties\" />
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="&quot;C:\Program Files (x86)\NuGet\nuget.exe&quot; pack &quot;$(ProjectPath)&quot; -Prop Configuration=$(ConfigurationName)" />
+  </Target>
 
 </Project>

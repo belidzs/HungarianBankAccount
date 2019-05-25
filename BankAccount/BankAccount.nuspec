@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$-alpha0</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>belidzs</owners>
+    <licenseUrl>https://github.com/belidzs/MagyarNemzetiBank.BankAccount/blob/develop/LICENCE</licenseUrl>
+    <projectUrl>https://github.com/belidzs/MagyarNemzetiBank.BankAccount</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>First alpha release</releaseNotes>
+    <copyright>$copyright$</copyright>
+    <tags>mnb bank banking bank-account bankaccount giro central-bank hungarian</tags>
+  </metadata>
+</package>
