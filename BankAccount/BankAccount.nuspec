@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>$version$-alpha0</version>
+    <version>$version$-alpha1</version>
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>belidzs</owners>
@@ -10,7 +10,7 @@
     <projectUrl>https://github.com/belidzs/MagyarNemzetiBank.BankAccount</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
-    <releaseNotes>First alpha release</releaseNotes>
+    <releaseNotes>Second alpha release</releaseNotes>
     <copyright>$copyright$</copyright>
     <tags>mnb bank banking bank-account bankaccount giro central-bank hungarian</tags>
   </metadata>
