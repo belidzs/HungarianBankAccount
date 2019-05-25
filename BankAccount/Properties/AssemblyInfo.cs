@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("This library written in pure C# checks the validity of Hungarian bank account numbers and determines which bank they belong to.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Balázs Keresztury")]
-[assembly: AssemblyProduct("MagyarNemzetiBank.Properties")]
+[assembly: AssemblyProduct("MagyarNemzetiBank.BankAccount")]
 [assembly: AssemblyCopyright("Copyright (c) 2019 Balázs Keresztury")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
