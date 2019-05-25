@@ -44,4 +44,5 @@ catch (KeyNotFoundException)
 
 Alternatively you can use the static `BankAccount.Validate(string accountNumber)` method to check if the number is syntactically correct.
 
-
+## Download from Nuget
+[!['nuget badge'](https://img.shields.io/nuget/v/MagyarNemzetiBank.BankAccount.svg)](https://www.nuget.org/packages/MagyarNemzetiBank.BankAccount/)
