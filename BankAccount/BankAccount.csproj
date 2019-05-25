@@ -3,6 +3,15 @@
   <PropertyGroup>
     <TargetFramework>netstandard1.4</TargetFramework>
     <RootNamespace>MagyarNemzetiBank</RootNamespace>
+    <AssemblyName>MagyarNemzetiBank.BankAccount</AssemblyName>
+    <Description>This library written in pure C# checks the validity of Hungarian bank account numbers and determines which bank they belong to</Description>
+    <Company>Balázs Keresztury</Company>
+    <Copyright>2019</Copyright>
+    <Product>MagyarNemzetiBank.BankAccount</Product>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
 
 </Project>
