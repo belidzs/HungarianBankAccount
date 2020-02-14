@@ -1,4 +1,8 @@
-﻿/*
+﻿// <copyright file="BankAccountValidator.cs" company="Balázs Keresztury">
+// Copyright (c) Balázs Keresztury. All rights reserved.
+// </copyright>
+
+/*
 * 18/2009. (VIII. 6.) MNB rendelet a pénzforgalom lebonyolításáról
 * http://net.jogtar.hu/jr/gen/hjegy_doc.cgi?docid=A0900018.MNB&celpara=#xcelparam
 *
@@ -16,29 +20,35 @@ using System.Text.RegularExpressions;
 namespace MagyarNemzetiBank
 {
     /// <summary>
-    /// Static class to validate Hungarian bank account numbers
+    /// Static class to validate Hungarian bank account numbers.
     /// </summary>
     public static class BankAccountValidator
     {
-        // ellenőrzőalgoritmusban meghatározott szorzók
-        private static readonly int[] Multipliers = { 9, 7, 3, 1 };
         private const string RegexGiro = "^[0-9]{8}-?[0-9]{8}(-?[0-9]{8})?$";
 
+        // ellenőrzőalgoritmusban meghatározott szorzók
+        private static readonly int[] Multipliers = { 9, 7, 3, 1 };
+
         /// <summary>
-        /// Checks if the given bank account number conforms to the Hungarian bank account number format and performs a parity check
+        /// Checks if the given bank account number conforms to the Hungarian bank account number format and performs a parity check.
         /// </summary>
-        /// <param name="accountNumber">Bank account number with or without hyphens</param>
-        /// <returns>True if the account number is valid</returns>
+        /// <param name="accountNumber">Bank account number with or without hyphens.</param>
+        /// <returns>True if the account number is valid.</returns>
         public static bool Validate(string accountNumber)
         {
-            if (accountNumber == null || accountNumber.Equals("")) return true;
-            //megfelelés regex formátumnak
+            if (accountNumber == null || accountNumber.Equals(string.Empty))
+            {
+                return true;
+            }
+
+            // megfelelés regex formátumnak
             Regex regexGiro = new Regex(RegexGiro);
             if (regexGiro.IsMatch(accountNumber))
             {
                 // ha megfelel a regexnek
                 // kötőjelek eltávolítása
-                accountNumber = accountNumber.Replace("-", "");
+                accountNumber = accountNumber.Replace("-", string.Empty);
+
                 // első nyolc blokk és a maradék ellenőrzése, külön
                 return ValidateBlock(accountNumber.Substring(0, 8)) && ValidateBlock(accountNumber.Substring(8));
             }
@@ -55,13 +65,15 @@ namespace MagyarNemzetiBank
             for (int j = 0; j < accountNumberBlock.Length - 1; j++)
             {
                 // szorzatösszeg kalkulálása
-                result += Int32.Parse(accountNumberBlock[j].ToString()) * Multipliers[j % 4];
+                result += int.Parse(accountNumberBlock[j].ToString()) * Multipliers[j % 4];
             }
-            if ((10 - result % 10) % 10 != Int32.Parse(accountNumberBlock[accountNumberBlock.Length - 1].ToString()))
+
+            if ((10 - (result % 10)) % 10 != int.Parse(accountNumberBlock[accountNumberBlock.Length - 1].ToString()))
             {
                 // a szorzatösszeg modulo 10 értékét 10-ből kivonva az utolsó számjegyet kell kapni. Ha ez 10, akkor 0-t
                 return false;
             }
+
             return true;
         }
     }

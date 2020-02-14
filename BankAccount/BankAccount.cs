@@ -1,36 +1,17 @@
-﻿using System;
+﻿// <copyright file="BankAccount.cs" company="Balázs Keresztury">
+// Copyright (c) Balázs Keresztury. All rights reserved.
+// </copyright>
+
+using System;
 using System.Collections.Generic;
 
 namespace MagyarNemzetiBank
 {
+    /// <summary>
+    /// Represents a single Hungarian Bank Account.
+    /// </summary>
     public class BankAccount
     {
-        /// <summary>
-        /// Bank Account Number in the format of 00000000-00000000 or 00000000-00000000-00000000 with or without the hyphens
-        /// </summary>
-        public string AccountNumber { get; set; }
-        /// <summary>
-        /// Tells whether the bank account's account number is valid
-        /// </summary>
-        public bool IsValid => BankAccountValidator.Validate(AccountNumber);
-        /// <summary>
-        /// Name of the bank the BankAccount belongs to
-        /// </summary>
-        public string Bank
-        {
-            get
-            {
-                if (IsValid)
-                {
-                    return _giroBankDictionary[Convert.ToInt32(AccountNumber.Substring(0, 3))];
-                }
-                else
-                {
-                    throw new FormatException("Invalid Bank Account");
-                }
-            }
-        } 
-
         // https://www.mnb.hu/letoltes/hitelintezetek-azonosito-adatai.pdf
         private readonly Dictionary<int, string> _giroBankDictionary = new Dictionary<int, string>()
         {
@@ -65,7 +46,7 @@ namespace MagyarNemzetiBank
             { 109, "UniCredit Bank Hungary Zrt." },
             { 171, "UniCredit Jelzálogbank Zrt." },
             { 147, "IC Bank Zrt." },
-            { 111, "Inter-Európa Bank Zrt."},
+            { 111, "Inter-Európa Bank Zrt." },
             { 137, "ING Bank (Magyarország) Zrt." },
             { 104, "Kereskedelmi és Hitelbank Zrt." },
             { 144, "Központi Elszámolóház és Értéktár Zrt. (KELER)" },
@@ -97,16 +78,44 @@ namespace MagyarNemzetiBank
             { 700, "Tiszaföldvár és Vidéke Takarékszövetkezet, Tiszaföldvár" },
             { 803, "Tiszántúli Első Hitelszövetkezet" },
             { 659, "Turai Takarékszövetkezet, Tura" },
-            { 121, "Westdeutche Landesbank (Hungária) Zrt." }
+            { 121, "Westdeutche Landesbank (Hungária) Zrt." },
         };
 
         /// <summary>
-        /// Bank Account
+        /// Initializes a new instance of the <see cref="BankAccount"/> class.
         /// </summary>
-        /// <param name="accountNumber">Bank Account Number in the format of 00000000-00000000 or 00000000-00000000-00000000 with or without the hyphens</param>
+        /// <param name="accountNumber">Bank Account Number in the format of 00000000-00000000 or 00000000-00000000-00000000 with or without the hyphens.</param>
         public BankAccount(string accountNumber)
         {
             AccountNumber = accountNumber;
+        }
+
+        /// <summary>
+        /// Bank Account Number in the format of 00000000-00000000 or 00000000-00000000-00000000 with or without the hyphens.
+        /// </summary>
+        public string AccountNumber { get; set; }
+
+        /// <summary>
+        /// Tells whether the bank account's account number is valid.
+        /// </summary>
+        public bool IsValid => BankAccountValidator.Validate(AccountNumber);
+
+        /// <summary>
+        /// Name of the bank the BankAccount belongs to.
+        /// </summary>
+        public string Bank
+        {
+            get
+            {
+                if (IsValid)
+                {
+                    return _giroBankDictionary[Convert.ToInt32(AccountNumber.Substring(0, 3))];
+                }
+                else
+                {
+                    throw new FormatException("Invalid Bank Account");
+                }
+            }
         }
     }
 }
