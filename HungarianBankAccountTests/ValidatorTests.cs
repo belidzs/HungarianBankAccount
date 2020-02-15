@@ -1,16 +1,17 @@
-﻿// <copyright file="BankAccountValidatorTests.cs" company="Balázs Keresztury">
+﻿// <copyright file="ValidatorTests.cs" company="Balázs Keresztury">
 // Copyright (c) Balázs Keresztury. All rights reserved.
 // </copyright>
 
+using HungarianBankAccount;
 using NUnit.Framework;
 
-namespace MagyarNemzetiBank.Tests
+namespace HungarianBankAccountTests
 {
     /// <summary>
     /// Tests various valid and invalid account numbers.
     /// </summary>
     [TestFixture]
-    public class BankAccountValidatorTests
+    public class ValidatorTests
     {
         /// <summary>
         /// Tests if valid bank account numbers are recognized.
@@ -24,7 +25,7 @@ namespace MagyarNemzetiBank.Tests
         [TestCase("10032000-01076349")]
         public void TestValid(string accountNumber)
         {
-            Assert.That(BankAccountValidator.Validate(accountNumber), Is.True);
+            Assert.That(Validator.Validate(accountNumber), Is.True);
         }
 
         /// <summary>
@@ -39,7 +40,7 @@ namespace MagyarNemzetiBank.Tests
         [TestCase("10032000-01076348")]
         public void TestBadChecksum(string accountNumber)
         {
-            Assert.That(BankAccountValidator.Validate(accountNumber), Is.False);
+            Assert.That(Validator.Validate(accountNumber), Is.False);
         }
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace MagyarNemzetiBank.Tests
         [TestCase("10032000-0107634a")]
         public void TestBadFormat(string accountNumber)
         {
-            Assert.That(BankAccountValidator.Validate(accountNumber), Is.False);
+            Assert.That(Validator.Validate(accountNumber), Is.False);
         }
     }
 }

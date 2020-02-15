@@ -1,4 +1,4 @@
-﻿// <copyright file="BankAccountValidator.cs" company="Balázs Keresztury">
+﻿// <copyright file="Validator.cs" company="Balázs Keresztury">
 // Copyright (c) Balázs Keresztury. All rights reserved.
 // </copyright>
 
@@ -17,12 +17,12 @@
 using System;
 using System.Text.RegularExpressions;
 
-namespace MagyarNemzetiBank
+namespace HungarianBankAccount
 {
     /// <summary>
     /// Static class to validate Hungarian bank account numbers.
     /// </summary>
-    public static class BankAccountValidator
+    public static class Validator
     {
         private const string RegexGiro = "^[0-9]{8}-?[0-9]{8}(-?[0-9]{8})?$";
 

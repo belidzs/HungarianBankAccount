@@ -4,9 +4,9 @@
 
 using System;
 using System.Collections.Generic;
-using MagyarNemzetiBank;
+using HungarianBankAccount;
 
-namespace BankAccountExamples
+namespace HungarianBankAccountExamples
 {
     /// <summary>
     /// Main entry point of the application.

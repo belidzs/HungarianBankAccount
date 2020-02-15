@@ -1,5 +1,5 @@
-# MagyarNemzetiBank.BankAccount
-This library written in pure C# checks the validity of a Hungarian bank account number and determines which bank is belongs to.
+# HungarianBankAccount
+This library written in C# checks the validity of a Hungarian bank account number (in GIRO format) and determines which bank it belongs to.
 
 ## Usage
 Let's check a valid bank account:
@@ -42,7 +42,7 @@ catch (KeyNotFoundException)
 }
 ```
 
-Alternatively you can use the static `BankAccount.Validate(string accountNumber)` method to check if the number is syntactically correct.
+Alternatively you can use the static `Validator.Validate(string accountNumber)` method to check if the number is syntactically and mathematically correct.
 
 ## Download from Nuget
-[!['nuget badge'](https://img.shields.io/nuget/v/MagyarNemzetiBank.BankAccount.svg)](https://www.nuget.org/packages/MagyarNemzetiBank.BankAccount/)
+[!['nuget badge'](https://img.shields.io/nuget/v/HungarianBankAccount.svg)](https://www.nuget.org/packages/HungarianBankAccount/)

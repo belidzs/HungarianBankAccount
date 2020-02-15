@@ -1,18 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFrameworks>netstandard1.0;netstandard2.0</TargetFrameworks>
-    <RootNamespace>MagyarNemzetiBank</RootNamespace>
-    <AssemblyName>MagyarNemzetiBank.BankAccount</AssemblyName>
-    <Description>This library written in pure C# checks the validity of Hungarian bank account numbers and determines which bank they belong to</Description>
-    <Copyright>Copyright (c) 2019 Balázs Keresztury</Copyright>
-    <Product>MagyarNemzetiBank.BankAccount</Product>
+    <RootNamespace>HungarianBankAccount</RootNamespace>
+    <AssemblyName>HungarianBankAccount</AssemblyName>
+    <Description>This library written in C# checks the validity of a Hungarian bank account number (in GIRO format) and determines which bank it belongs to.</Description>
+    <Copyright>Copyright (c) 2020 Balázs Keresztury</Copyright>
+    <Product></Product>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/belidzs/MagyarNemzetiBank.BankAccount</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/belidzs/MagyarNemzetiBank.BankAccount</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/belidzs/HungarianBankAccount</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/belidzs/HungarianBankAccount</RepositoryUrl>
     <PackageTags>mnb bank banking bank-account bankaccount giro central-bank hungarian</PackageTags>
     <Authors>Balázs Keresztury</Authors>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
+    <Company />
   </PropertyGroup>
   <ItemGroup>
     <None Remove="stylecop.json" />

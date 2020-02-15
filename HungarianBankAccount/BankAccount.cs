@@ -5,7 +5,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MagyarNemzetiBank
+namespace HungarianBankAccount
 {
     /// <summary>
     /// Represents a single Hungarian Bank Account.
@@ -98,7 +98,7 @@ namespace MagyarNemzetiBank
         /// <summary>
         /// Tells whether the bank account's account number is valid.
         /// </summary>
-        public bool IsValid => BankAccountValidator.Validate(AccountNumber);
+        public bool IsValid => Validator.Validate(AccountNumber);
 
         /// <summary>
         /// Name of the bank the BankAccount belongs to.
