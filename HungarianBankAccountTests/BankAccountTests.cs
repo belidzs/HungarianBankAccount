@@ -4,9 +4,10 @@
 
 using System;
 using System.Collections.Generic;
+using HungarianBankAccount;
 using NUnit.Framework;
 
-namespace MagyarNemzetiBank.Tests
+namespace HungarianBankAccountTests
 {
     /// <summary>
     /// Tests for the BankAccount class.
